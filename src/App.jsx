@@ -85,9 +85,27 @@ const products = [
 ];
 
 const reviews = [
-  "\"인생 쿠키를 만났어요. 두바이 쿠키 식감 대박!\" ⭐⭐⭐⭐⭐",
-  "\"패키지가 너무 고급스러워서 선물용으로 딱입니다.\"",
-  "\"매장 분위기가 너무 좋아요. 또 올게요!\""
+  {
+    id: "user**",
+    date: "25.2.4.수 방문",
+    content: "바쁜 일상에서 스트레스가 극에 달했을 때 달달함이 필요해서 눈여겨보다 들렀어요 소문대로 초콜릿 맛이 좋고, 깊었고 공간도 조용하고 아늑해서 음료한잔 하며 생각에 잠겨 쉬기 좋 았어요 대구에 이런 초콜릿 전문점 찾기 힘든데 보물같은 곳 이에요. 선물하기도 좋은 다양한 제품들도 있네요^^ 다음에 지 인에 선물해보고싶네요",
+    keywords: ["디저트가 맛있어요", "특별한 메뉴가 있어요", "친절해요"],
+    stars: 5
+  },
+  {
+    id: "swee**",
+    date: "25.2.6.금 방문",
+    content: "커피도 쿠키도 초콜렛도 너무 맛있었어요! 사장님도 친절하시고 카페 분위기도 편안하고 좋아요. 곧 발렌타인인데 특별한 초콜렛 선물하기에 딱 좋아보여요!",
+    keywords: ["선물하기 좋아요", "포장이 깔끔해요", "가성비가 좋아요"],
+    stars: 5
+  },
+  {
+    id: "choc**",
+    date: "24.2.5.수 방문",
+    content: "매장 분위기가 너무 좋아요. 달달한 초콜릿 라떼랑 쿠키 조합이 환상적이네요. 당 충전 제대로 하고 갑니다!",
+    keywords: ["인테리어가 멋져요", "커피가 맛있어요", "사진이 잘 나와요"],
+    stars: 5
+  }
 ];
 
 export default function App() {
@@ -434,23 +452,78 @@ export default function App() {
           </motion.div>
         </section>
 
-        {/* Social Proof Section */}
-        <section className="w-full px-6 py-8 flex flex-col gap-5 bg-[#FAF6F1]">
-          <h2 className="text-[24px] font-bold text-[#3E2723]">What People Say</h2>
+        {/* Review Section - Naver Style */}
+        <section className="w-full px-6 py-10 flex flex-col gap-6 bg-white">
+          <div className="flex flex-col gap-1">
+            <h2 className="text-[22px] font-bold text-[#242424] tracking-tight">방문자 리뷰</h2>
+            <div className="flex items-center gap-1.5 text-sm">
+              <span className="font-bold text-[#242424] text-lg">4.98</span>
+              <span className="text-[#8D6E63] text-xs">/ 5</span>
+              <div className="flex gap-0.5 ml-2 text-[#FFC107]">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
+                    <path d="M7 0L8.5716 4.83688H13.6574L9.5429 7.82624L11.1145 12.6631L7 9.67376L2.8855 12.6631L4.4571 7.82624L0.342604 4.83688H5.4284L7 0Z" />
+                  </svg>
+                ))}
+              </div>
+            </div>
+          </div>
+
           <div className="flex flex-col gap-4">
             {reviews.map((review, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="w-full p-5 bg-white rounded-xl shadow-sm border border-[#EAE0D5]"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-20px" }}
+                transition={{ duration: 0.5, delay: index * 0.1, type: "spring", damping: 20 }}
+                className="w-full p-5 bg-[#F8F9FA] rounded-[18px] border border-[#F0F0F0] flex flex-col gap-3 shadow-sm hover:shadow-md transition-shadow duration-300 relative overflow-hidden"
               >
-                <p className="text-sm text-[#4E342E] font-medium leading-relaxed">{review}</p>
+                {/* Header: User Info */}
+                <div className="flex justify-between items-start">
+                  <div className="flex flex-col gap-1">
+                    <div className="flex items-center gap-2">
+                      <span className="font-bold text-[#242424] text-[13px]">{review.id}</span>
+                      <span className="text-[11px] text-[#8F8F8F] font-normal">{review.date}</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      {[...Array(review.stars)].map((_, i) => (
+                        <svg key={i} width="10" height="10" viewBox="0 0 14 14" fill="#FFC107">
+                          <path d="M7 0L8.5716 4.83688H13.6574L9.5429 7.82624L11.1145 12.6631L7 9.67376L2.8855 12.6631L4.4571 7.82624L0.342604 4.83688H5.4284L7 0Z" />
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <p className="text-[14px] text-[#424242] leading-relaxed font-normal break-keep">
+                  {review.content}
+                </p>
+
+                {/* Keywords */}
+                <div className="flex flex-wrap gap-1.5 mt-1">
+                  {review.keywords.map((keyword, i) => (
+                    <span key={i} className="px-2.5 py-1.5 bg-white border border-[#E0E0E0] text-[#666666] text-[11px] rounded-[6px] font-medium flex items-center gap-1 shadow-sm">
+                      <Check size={10} className="text-[#8D6E63]" strokeWidth={3} />
+                      {keyword}
+                    </span>
+                  ))}
+                </div>
               </motion.div>
             ))}
           </div>
+
+          <motion.div
+            className="w-full flex justify-center mt-2"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <button className="w-full py-3.5 border border-[#E0E0E0] rounded-xl text-[#424242] text-sm font-bold bg-white hover:bg-[#F8F9FA] transition-colors flex justify-center items-center gap-2">
+              <span>네이버 리뷰 전체보기</span>
+              <span className="text-[#8F8F8F] text-xs font-normal">→</span>
+            </button>
+          </motion.div>
         </section>
 
         {/* Footer */}
