@@ -1,0 +1,465 @@
+{
+  "version": "2.7",
+  "children": [
+    {
+      "type": "frame",
+      "id": "p2IXE",
+      "x": 0,
+      "y": 0,
+      "name": "Desktop Root",
+      "width": 1440,
+      "height": 1200,
+      "fill": "#EAE0D5",
+      "layout": "vertical",
+      "padding": [
+        60,
+        0
+      ],
+      "justifyContent": "center",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "LnpEH",
+          "name": "Mobile Container",
+          "width": 480,
+          "fill": "#FAF6F1",
+          "cornerRadius": 24,
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "1qzQi",
+              "name": "Hero Section",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 20,
+              "padding": [
+                40,
+                24
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "ofU7V",
+                  "name": "Cookie Image",
+                  "metadata": {
+                    "type": "unsplash",
+                    "username": "mussi",
+                    "link": "https://unsplash.com/@mussi",
+                    "author": "Anisa Mustafa"
+                  },
+                  "width": 320,
+                  "height": 240,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "https://images.unsplash.com/photo-1629273547117-f459fcc8a577?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzA1MTUwNjl8&ixlib=rb-4.1.0&q=80&w=1080",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 16
+                },
+                {
+                  "type": "text",
+                  "id": "TBB5R",
+                  "name": "heroTitle",
+                  "fill": "#3E2723",
+                  "content": "REVIEW EVENT",
+                  "fontFamily": "Outfit",
+                  "fontSize": 28,
+                  "fontWeight": "bold",
+                  "letterSpacing": -0.5
+                },
+                {
+                  "type": "text",
+                  "id": "Mpm9j",
+                  "name": "heroSub",
+                  "fill": "#5D4037",
+                  "content": "영수증 인증하고,\n토니쿠키 받아가세요!",
+                  "lineHeight": 1.5,
+                  "textAlign": "center",
+                  "fontFamily": "Outfit",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "nHp8d",
+                  "name": "Main CTA",
+                  "width": "fill_container",
+                  "fill": "#3E2723",
+                  "cornerRadius": 12,
+                  "padding": [
+                    16,
+                    0
+                  ],
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "76G4u",
+                      "name": "heroBtnText",
+                      "fill": "#FFFFFF",
+                      "content": "영수증 리뷰 쓰고 쿠키 받기",
+                      "fontFamily": "Outfit",
+                      "fontSize": 16,
+                      "fontWeight": "bold"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sEJYy",
+              "name": "Game Section",
+              "width": "fill_container",
+              "gap": 16,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "1J9sX",
+                  "name": "gameCard",
+                  "width": "fill_container",
+                  "fill": "#FFF0F0",
+                  "cornerRadius": 16,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": 20,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Jbjhd",
+                      "name": "gameTitle",
+                      "fill": "#3E2723",
+                      "content": "오늘의 초콜릿 운세 🍫",
+                      "fontFamily": "Outfit",
+                      "fontSize": 18,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "MoaZb",
+                      "name": "gameBtn",
+                      "fill": "#EDC5C4",
+                      "cornerRadius": 100,
+                      "padding": [
+                        10,
+                        20
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "k1Trz",
+                          "name": "gameBtnText",
+                          "fill": "#3E2723",
+                          "content": "운세 뽑기",
+                          "fontFamily": "Outfit",
+                          "fontSize": 14,
+                          "fontWeight": "semibold"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "cxPDU",
+              "name": "New & Best",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "padding": [
+                24,
+                0
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "0Nvfk",
+                  "name": "nbTitle",
+                  "fill": "#3E2723",
+                  "content": "New & Best",
+                  "fontFamily": "Outfit",
+                  "fontSize": 22,
+                  "fontWeight": "bold"
+                },
+                {
+                  "type": "frame",
+                  "id": "ANSmD",
+                  "name": "nbScroll",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "padding": [
+                    0,
+                    24
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "NHDa0",
+                      "name": "nbItem1",
+                      "width": 160,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "XidSE",
+                          "name": "nbImg1",
+                          "metadata": {
+                            "type": "unsplash",
+                            "username": "liviaphotographs",
+                            "link": "https://unsplash.com/@liviaphotographs",
+                            "author": "Livia"
+                          },
+                          "width": 160,
+                          "height": 160,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "https://images.unsplash.com/photo-1705659282075-20fb873b6924?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzA1MTUwNjl8&ixlib=rb-4.1.0&q=80&w=1080",
+                            "mode": "fill"
+                          },
+                          "cornerRadius": 12
+                        },
+                        {
+                          "type": "frame",
+                          "id": "PbfKw",
+                          "name": "nbTag1",
+                          "fill": "#EDC5C4",
+                          "cornerRadius": 4,
+                          "padding": [
+                            4,
+                            8
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "i6PlJ",
+                              "name": "nbTagText1",
+                              "fill": "#3E2723",
+                              "content": "NEW",
+                              "fontFamily": "Inter",
+                              "fontSize": 10,
+                              "fontWeight": "bold"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "EYmWH",
+                          "name": "nbText1",
+                          "fill": "#3E2723",
+                          "content": "두바이 쫀득 쿠키",
+                          "fontFamily": "Outfit",
+                          "fontSize": 14,
+                          "fontWeight": "semibold"
+                        },
+                        {
+                          "type": "text",
+                          "id": "ElWfA",
+                          "name": "nbDesc1",
+                          "fill": "#9C9B99",
+                          "content": "이스탄불 카다이프의 바삭함!",
+                          "fontFamily": "Outfit",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "3JsLH",
+                      "name": "nbItem2",
+                      "width": 160,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "9qa6k",
+                          "name": "nbImg2",
+                          "metadata": {
+                            "type": "unsplash",
+                            "username": "jonathanborba",
+                            "link": "https://unsplash.com/@jonathanborba",
+                            "author": "Jonathan Borba"
+                          },
+                          "width": 160,
+                          "height": 160,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "https://images.unsplash.com/photo-1553787499-6f9133860278?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzA1MTUwNzB8&ixlib=rb-4.1.0&q=80&w=1080",
+                            "mode": "fill"
+                          },
+                          "cornerRadius": 12
+                        },
+                        {
+                          "type": "text",
+                          "id": "wMAoI",
+                          "name": "nbText2",
+                          "fill": "#3E2723",
+                          "content": "리얼 초콜릿 라떼",
+                          "fontFamily": "Outfit",
+                          "fontSize": 14,
+                          "fontWeight": "semibold"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Vr8UN",
+                      "name": "nbItem3",
+                      "width": 160,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "5W3Br",
+                          "name": "nbImg3",
+                          "metadata": {
+                            "type": "unsplash",
+                            "username": "miracleday",
+                            "link": "https://unsplash.com/@miracleday",
+                            "author": "Elena Mozhvilo"
+                          },
+                          "width": 160,
+                          "height": 160,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "https://images.unsplash.com/photo-1611394094568-c956c6eadd6a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzA1MTUwNzF8&ixlib=rb-4.1.0&q=80&w=1080",
+                            "mode": "fill"
+                          },
+                          "cornerRadius": 12
+                        },
+                        {
+                          "type": "text",
+                          "id": "O3rpb",
+                          "name": "nbText3",
+                          "fill": "#3E2723",
+                          "content": "발렌타인 한정 패키지",
+                          "fontFamily": "Outfit",
+                          "fontSize": 14,
+                          "fontWeight": "semibold"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Dpzrl",
+              "name": "Social Proof",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "KV58I",
+                  "name": "socialTitle",
+                  "fill": "#3E2723",
+                  "content": "What People Say",
+                  "fontFamily": "Outfit",
+                  "fontSize": 22,
+                  "fontWeight": "bold"
+                },
+                {
+                  "type": "frame",
+                  "id": "WA5Ri",
+                  "name": "reviewStack",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "ccFWh",
+                      "name": "rev1",
+                      "width": "fill_container",
+                      "fill": "#3E2723",
+                      "cornerRadius": 12,
+                      "padding": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "rQ0Em",
+                          "name": "revText1",
+                          "fill": "#FFFFFF",
+                          "content": "\"인생 쿠키를 만났어요. 두바이 쿠키 식감 대박!\" ⭐⭐⭐⭐⭐",
+                          "lineHeight": 1.4,
+                          "fontFamily": "Outfit",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "lLyYj",
+                      "name": "rev2",
+                      "width": "fill_container",
+                      "fill": "#3E2723",
+                      "cornerRadius": 12,
+                      "padding": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "qFwiL",
+                          "name": "revText2",
+                          "fill": "#FFFFFF",
+                          "content": "\"패키지가 너무 고급스러워서 선물용으로 딱입니다.\"",
+                          "lineHeight": 1.4,
+                          "fontFamily": "Outfit",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Gu6k2",
+              "name": "Footer",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "padding": [
+                32,
+                24
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "0lDGb",
+                  "name": "footerLinks",
+                  "fill": "#9C9B99",
+                  "content": "Instagram  ·  SmartStore  ·  WiFi",
+                  "fontFamily": "Outfit",
+                  "fontSize": 12,
+                  "fontWeight": "medium"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
