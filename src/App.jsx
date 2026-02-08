@@ -24,7 +24,7 @@ const fortunes = [
   { text: "귀인의 도움을 받게 될 지도 몰라요!", tier: "Rare" },
 
   // Legendary (10%) - 1 items (Winner)
-  { text: "축하합니다! 0.1% 행운 당첨! 이 화면을 직원에게 보여주시면 '디톡스티 샘플' 또는 '초콜릿 샘플'을 즉시 드립니다! ✨", tier: "Legendary" },
+  { text: "축하합니다! 0.1% 행운 당첨! 이 화면을 직원에게 보여주시면 특별한 선물을 즉시 드립니다! ✨", tier: "Legendary" },
 ];
 
 // Weighted Random Selection Helper
@@ -243,14 +243,18 @@ export default function App() {
                         <span className="text-sm font-bold text-[#3E2723]">/ 5</span>
                       </div>
                       <motion.button
-                        onClick={handleFortuneClick}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="bg-[#EDC5C4] px-6 py-3 rounded-full shadow-md hover:bg-[#E6B0AF] transition-colors flex items-center gap-2 mt-2"
+                        onClick={handleFortuneClick}
+                        disabled={isDrawing || coins <= 0}
+                        className="px-8 py-4 bg-[#EF9A9A] text-white rounded-full font-bold shadow-lg flex items-center gap-2 hover:bg-[#E57373] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                       >
-                        <Cookie size={20} className="text-[#3E2723]" />
-                        <span className="text-[#3E2723] text-sm font-semibold">운세 뽑기 (1코인)</span>
+                        <Cookie size={20} />
+                        운세 뽑기 ({coins}코인)
                       </motion.button>
+                      <p className="mt-4 text-xs text-[#8D6E63] font-medium animate-pulse">
+                        ✨ 0.1% 확률로 특별한 선물이 기다리고 있어요! ✨
+                      </p>
                     </>
                   ) : (
                     <>
