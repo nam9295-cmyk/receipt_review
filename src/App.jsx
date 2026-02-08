@@ -42,22 +42,45 @@ const getRandomFortune = () => {
 const products = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1705659282075-20fb873b6924?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzA1MTUwNjl8&ixlib=rb-4.1.0&q=80&w=1080",
-    name: "두바이 쫀득 쿠키",
-    description: "이스탄불 카다이프의 바삭함!",
+    image: "/canele.webp",
+    name: "canelé",
+    description: "겉바속쫀, 프랑스 발로나를 담다.",
     tag: "NEW"
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1553787499-6f9133860278?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzA1MTUwNzB8&ixlib=rb-4.1.0&q=80&w=1080",
-    name: "리얼 초콜릿 라떼",
-    description: ""
+    image: "/chocolat.webp",
+    name: "dark chocolat",
+    description: "진짜 초콜릿으로 만든 초코음료. 100%에 도전해보세요.",
+    tag: "BEST"
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1611394094568-c956c6eadd6a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzA1MTUwNzF8&ixlib=rb-4.1.0&q=80&w=1080",
-    name: "발렌타인 한정 패키지",
-    description: ""
+    image: "/detox.webp",
+    name: "cacao detox water",
+    description: "카카오닙이랑 블랜딩된 디톡스 티",
+    tag: "NEW"
+  },
+  {
+    id: 4,
+    image: "/levein.webp",
+    name: "levein cookie",
+    description: "유기농 사탕수수 원당으로 만든 뉴욕스타일 겉바 속촉",
+    tag: "BEST"
+  },
+  {
+    id: 5,
+    image: "/matcha.webp",
+    name: "matcha chocolat",
+    description: "진짜 초콜릿과 말차의 만남.",
+    tag: "NEW"
+  },
+  {
+    id: 6,
+    image: "/snow.webp",
+    name: "toni cookie snow ball",
+    description: "겉은 눈처럼 보송보송, 속은 사르르",
+    tag: "EVENT"
   }
 ];
 
@@ -379,12 +402,11 @@ export default function App() {
                   hidden: { opacity: 0, x: 20 },
                   visible: { opacity: 1, x: 0, transition: { type: "spring", damping: 12 } }
                 }}
-                className="min-w-[200px] flex flex-col gap-4 snap-start group cursor-pointer"
-                onClick={() => window.open("https://smartstore.naver.com", "_blank")}
+                className="min-w-[200px] flex flex-col gap-4 snap-start group cursor-default"
                 whileHover={{ y: -8 }}
               >
                 <div className="w-[200px] h-[240px] rounded-2xl bg-[#D7CCC8] overflow-hidden relative shadow-md group-hover:shadow-xl transition-shadow duration-300">
-                  <img src={product.image} alt={product.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                  <img src={product.image} alt={product.name} loading="lazy" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors duration-300" />
 
                   {product.tag && (
@@ -405,10 +427,7 @@ export default function App() {
                       {product.description}
                     </p>
                   )}
-                  <div className="mt-2 flex items-center gap-1 text-[#3E2723] text-xs font-bold border border-[#3E2723]/20 rounded-lg px-3 py-1.5 w-fit group-hover:bg-[#3E2723] group-hover:text-[#FFFDF5] transition-all">
-                    <span>구매하기</span>
-                    <ShoppingBag size={12} />
-                  </div>
+                  {/* Buy button removed as per user request */}
                 </div>
               </motion.div>
             ))}
