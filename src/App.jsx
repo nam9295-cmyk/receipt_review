@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ShoppingBag, Wifi, Instagram, Gift, Sparkles, RotateCcw, Cookie, Check } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
+import { Gift, Sparkles, RotateCcw, Cookie, Check, Globe, MapPin, Code } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 const fortunes = [
@@ -114,6 +114,19 @@ export default function App() {
   const [isDrawing, setIsDrawing] = useState(false);
   const [isVerified, setIsVerified] = useState(false);
   const [coins, setCoins] = useState(5);
+  const [showDock, setShowDock] = useState(false);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const reviewSection = document.getElementById('review-section');
+    if (reviewSection) {
+      if (latest > reviewSection.offsetTop - window.innerHeight + 100) {
+        setShowDock(true);
+      } else {
+        setShowDock(false);
+      }
+    }
+  });
 
   const handleFortuneClick = () => {
     if (coins <= 0) return;
@@ -453,7 +466,7 @@ export default function App() {
         </section>
 
         {/* Review Section - Naver Style */}
-        <section className="w-full px-6 py-10 flex flex-col gap-6 bg-white">
+        <section id="review-section" className="w-full px-6 py-10 flex flex-col gap-6 bg-white">
           <div className="flex flex-col gap-1">
             <h2 className="text-[22px] font-bold text-[#242424] tracking-tight">방문자 리뷰</h2>
             <div className="flex items-center gap-1.5 text-sm">
@@ -526,20 +539,60 @@ export default function App() {
           </motion.div>
         </section>
 
-        {/* Footer */}
-        <footer className="w-full px-6 py-10 flex flex-col gap-6 items-center bg-[#FAF6F1]">
-          <div className="w-full h-px bg-[#EAE0D5]" />
-          <div className="flex gap-4 text-[#8D6E63] text-xs font-medium">
-            <span className="flex items-center gap-1.5 cursor-pointer hover:text-[#3E2723] transition-colors"><Instagram size={14} /> Instagram</span>
-            <span>·</span>
-            <span className="flex items-center gap-1.5 cursor-pointer hover:text-[#3E2723] transition-colors"><ShoppingBag size={14} /> SmartStore</span>
-            <span>·</span>
-            <span className="flex items-center gap-1.5 cursor-pointer hover:text-[#3E2723] transition-colors"><Wifi size={14} /> WiFi</span>
-          </div>
-          <p className="text-[10px] text-[#D7CCC8] text-center">
-            © 2024 Receipt Review Event. All rights reserved.
-          </p>
-        </footer>
+        {/* Global Navigation Dock */}
+        <AnimatePresence>
+          {showDock && (
+            <motion.div
+              initial={{ y: 100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 100, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 260, damping: 20 }}
+              className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50"
+            >
+              <div className="flex items-center gap-2 px-2 py-2 bg-white/30 backdrop-blur-md border border-white/40 rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.1)]">
+                {/* Global Site */}
+                <motion.button
+                  onClick={() => window.open("https://verygood-chocolate.com", "_blank")}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="flex flex-col items-center justify-center w-12 h-12 rounded-full bg-white/40 hover:bg-white/60 transition-colors gap-0.5"
+                >
+                  <Globe size={18} className="text-[#3E2723]" />
+                  <span className="text-[9px] font-bold text-[#3E2723]">Global</span>
+                </motion.button>
+
+                {/* Korean Site */}
+                <motion.button
+                  onClick={() => window.open("https://kr.verygood-chocolate.com", "_blank")}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="flex flex-col items-center justify-center w-12 h-12 rounded-full bg-white/40 hover:bg-white/60 transition-colors gap-0.5"
+                >
+                  <MapPin size={18} className="text-[#3E2723]" />
+                  <span className="text-[9px] font-bold text-[#3E2723]">Korea</span>
+                </motion.button>
+
+                {/* Portfolio */}
+                <motion.button
+                  onClick={() => window.open("https://jd26.pages.dev/", "_blank")}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="flex items-center gap-2 px-3 h-12 rounded-full bg-[#3E2723] text-[#FFFDF5] shadow-lg relative overflow-hidden group"
+                >
+                  <motion.div
+                    animate={{ opacity: [0.5, 1, 0.5] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"
+                  />
+                  <Code size={16} />
+                  <span className="text-xs font-bold whitespace-nowrap pr-1">Directed by John</span>
+                </motion.button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+
 
       </div>
     </div>
