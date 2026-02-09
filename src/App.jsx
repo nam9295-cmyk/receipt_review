@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
-import { Gift, Sparkles, RotateCcw, Cookie, Check, Globe, MapPin, Code } from 'lucide-react';
+import { Gift, Sparkles, RotateCcw, Cookie, Check, Globe, MapPin, Code, Instagram } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 const fortunes = [
@@ -210,6 +210,62 @@ export default function App() {
               <span className="text-white text-base font-bold drop-shadow-md group-hover:text-[#FFFDF5]">영수증 리뷰 쓰고 쿠키 받기</span>
             </motion.button>
           </div>
+        </section>
+
+        {/* Instagram Promotion Section */}
+        <section className="w-full px-6 py-10 bg-[#FAF6F1]">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-20px" }}
+            whileHover={{ scale: 1.02 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            onClick={() => window.open("https://instagram.com/verygood_chocolate", "_blank")}
+            className="w-full p-5 rounded-2xl relative overflow-hidden cursor-pointer group"
+          >
+            {/* Glassmorphism Background */}
+            <div className="absolute inset-0 bg-white/40 backdrop-blur-md border border-white/50 rounded-2xl shadow-lg z-0 transition-colors duration-300 group-hover:bg-white/60" />
+
+            {/* Instagram Gradient Border */}
+            <div
+              className="absolute inset-0 z-10 pointer-events-none"
+              style={{
+                border: '2px solid',
+                borderImageSource: 'linear-gradient(to right, #833ab4, #fd1d1d, #fcb045)',
+                borderImageSlice: 1,
+                clipPath: 'inset(0 round 1rem)' // 16px radius for rounded-2xl
+              }}
+            />
+
+            <div className="relative z-20 flex items-center justify-between gap-4">
+              {/* Left: Icon/Logo */}
+              <div className="flex items-center gap-4 flex-1 min-w-0">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 p-[2px] shadow-md flex-shrink-0">
+                  <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
+                    <Instagram size={28} className="text-[#E1306C]" />
+                  </div>
+                </div>
+
+                {/* Center: Text */}
+                <div className="flex flex-col gap-0.5 min-w-0">
+                  <div className="flex items-center gap-1.5">
+                    <h3 className="text-[#3E2723] font-bold text-lg truncate">@verygood_chocolate</h3>
+                    <div className="bg-blue-500 rounded-full p-[2px]">
+                      <Check size={8} className="text-white" strokeWidth={4} />
+                    </div>
+                  </div>
+                  <p className="text-[#8D6E63] text-xs font-medium truncate">
+                    인스타그램 팔로우 하고 게릴라 이벤트 소식을 받아보세요 🍫
+                  </p>
+                </div>
+              </div>
+
+              {/* Right: Button */}
+              <button className="px-5 py-2 bg-[#3E2723] text-white text-sm font-bold rounded-full shadow-md group-hover:bg-[#5D4037] transition-colors whitespace-nowrap">
+                Follow
+              </button>
+            </div>
+          </motion.div>
         </section>
 
         {/* Game Section - Fortune Gacha */}
