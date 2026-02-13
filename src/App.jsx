@@ -41,6 +41,20 @@ const getRandomFortune = () => {
 
 const products = [
   {
+    id: 101, // New ID for Dubai Cookie
+    image: "/dubai.webp",
+    name: "두바이 쫀득쿠키",
+    description: "쇼콜라티에가 만드는 진짜 두쫀쿠!",
+    tag: "NEW"
+  },
+  {
+    id: 102, // New ID for Dubai Chocolate
+    image: "/dubai_choc.webp",
+    name: "두바이 초콜릿",
+    description: "백화점 팝업 완판의 신화",
+    tag: "BEST"
+  },
+  {
     id: 1,
     image: "/canele.webp",
     name: "canelé",
@@ -167,105 +181,59 @@ export default function App() {
           {/* Background Image */}
           <img
             src="/hero-bg.webp"
-            alt="Delicious Chocolate Chip Cookie"
+            alt="Rose Gift"
             className="absolute inset-0 w-full h-full object-cover"
           />
 
           {/* Subtle Overlay for Readability */}
           <div className="absolute inset-0 bg-black/10" />
 
-          {/* Content Overlay - Top Aligned */}
-          <div className="absolute inset-0 flex flex-col justify-between items-center pt-16 pb-8 px-6 text-center z-10">
+          {/* Content Overlay */}
+          <div className="absolute inset-0 flex flex-col justify-between items-center pt-12 pb-8 px-6 text-center z-10">
+            {/* Top: Title */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="flex flex-col items-center gap-4 w-full"
+              className="flex flex-col items-center w-full"
             >
-              <h1 className="text-[32px] font-bold text-[#FFFDF5] tracking-tight drop-shadow-lg">
+              <h1 className="text-[42px] font-bold text-[#FFFDF5] tracking-tight drop-shadow-lg leading-none">
                 REVIEW EVENT
               </h1>
-              <p className="text-lg text-[#FFFDF5] font-medium leading-relaxed drop-shadow-lg">
-                영수증 인증하고,<br />
-                <span className="font-bold text-[#EDC5C4]">토니쿠키</span> 받아가세요!
-              </p>
             </motion.div>
 
-            <motion.button
-              onClick={() => window.open(
-                "https://m.place.naver.com/restaurant/1069379954/review/visitor",
-                "_blank"
-              )}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              whileHover={{
-                scale: 1.02,
-                backgroundColor: "rgba(62, 39, 35, 0.4)", // Slightly darken on hover
-                borderColor: "rgba(255, 255, 255, 0.5)"
-              }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full py-4 bg-[#3E2723]/30 backdrop-blur-md border border-white/30 rounded-xl flex justify-center items-center shadow-[0_8px_32px_rgba(0,0,0,0.1)] transition-all duration-300 group"
-            >
-              <span className="text-white text-base font-bold drop-shadow-md group-hover:text-[#FFFDF5]">영수증 리뷰 쓰고 쿠키 받기</span>
-            </motion.button>
-          </div>
-        </section>
+            {/* Bottom: Description & Button */}
+            <div className="flex flex-col items-center gap-6 w-full">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                className="text-lg text-[#FFFDF5] font-medium leading-relaxed drop-shadow-lg"
+              >
+                영수증 인증하고,<br />
+                <span className="font-bold text-[#EDC5C4]">장미꽃 한송이</span> 받아가세요!
+              </motion.p>
 
-        {/* Instagram Promotion Section */}
-        <section className="w-full px-6 py-10 bg-[#FAF6F1]">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-20px" }}
-            whileHover={{ scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            onClick={() => window.open("https://instagram.com/verygood_chocolate", "_blank")}
-            className="w-full p-5 rounded-2xl relative overflow-hidden cursor-pointer group"
-          >
-            {/* Glassmorphism Background */}
-            <div className="absolute inset-0 bg-white/40 backdrop-blur-md border border-white/50 rounded-2xl shadow-lg z-0 transition-colors duration-300 group-hover:bg-white/60" />
-
-            {/* Instagram Gradient Border */}
-            <div
-              className="absolute inset-0 z-10 pointer-events-none"
-              style={{
-                border: '2px solid',
-                borderImageSource: 'linear-gradient(to right, #833ab4, #fd1d1d, #fcb045)',
-                borderImageSlice: 1,
-                clipPath: 'inset(0 round 1rem)' // 16px radius for rounded-2xl
-              }}
-            />
-
-            <div className="relative z-20 flex items-center justify-between gap-4">
-              {/* Left: Icon/Logo */}
-              <div className="flex items-center gap-4 flex-1 min-w-0">
-                <div className="w-14 h-14 rounded-full bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 p-[2px] shadow-md flex-shrink-0">
-                  <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
-                    <Instagram size={28} className="text-[#E1306C]" />
-                  </div>
-                </div>
-
-                {/* Center: Text */}
-                <div className="flex flex-col gap-0.5 min-w-0">
-                  <div className="flex items-center gap-1.5">
-                    <h3 className="text-[#3E2723] font-bold text-lg truncate">@verygood_chocolate</h3>
-                    <div className="bg-blue-500 rounded-full p-[2px]">
-                      <Check size={8} className="text-white" strokeWidth={4} />
-                    </div>
-                  </div>
-                  <p className="text-[#8D6E63] text-xs font-medium truncate">
-                    인스타그램 팔로우 하고 게릴라 이벤트 소식을 받아보세요 🍫
-                  </p>
-                </div>
-              </div>
-
-              {/* Right: Button */}
-              <button className="px-5 py-2 bg-[#3E2723] text-white text-sm font-bold rounded-full shadow-md group-hover:bg-[#5D4037] transition-colors whitespace-nowrap">
-                Follow
-              </button>
+              <motion.button
+                onClick={() => window.open(
+                  "https://m.place.naver.com/restaurant/1069379954/review/visitor",
+                  "_blank"
+                )}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                whileHover={{
+                  scale: 1.02,
+                  backgroundColor: "rgba(62, 39, 35, 0.4)",
+                  borderColor: "rgba(255, 255, 255, 0.5)"
+                }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full py-4 bg-[#3E2723]/30 backdrop-blur-md border border-white/30 rounded-xl flex justify-center items-center shadow-[0_8px_32px_rgba(0,0,0,0.1)] transition-all duration-300 group"
+              >
+                <span className="text-white text-base font-bold drop-shadow-md group-hover:text-[#FFFDF5]">영수증 리뷰 쓰고 장미꽃 받기</span>
+              </motion.button>
             </div>
-          </motion.div>
+          </div>
         </section>
 
         {/* Game Section - Fortune Gacha */}
@@ -464,6 +432,62 @@ export default function App() {
               )}
             </AnimatePresence>
           </div>
+        </section>
+
+        {/* Instagram Promotion Section */}
+        <section className="w-full px-6 py-10 bg-[#FAF6F1]">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-20px" }}
+            whileHover={{ scale: 1.02 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            onClick={() => window.open("https://instagram.com/verygood_chocolate", "_blank")}
+            className="w-full p-5 rounded-2xl relative overflow-hidden cursor-pointer group"
+          >
+            {/* Glassmorphism Background */}
+            <div className="absolute inset-0 bg-white/40 backdrop-blur-md border border-white/50 rounded-2xl shadow-lg z-0 transition-colors duration-300 group-hover:bg-white/60" />
+
+            {/* Instagram Gradient Border */}
+            <div
+              className="absolute inset-0 z-10 pointer-events-none"
+              style={{
+                border: '2px solid',
+                borderImageSource: 'linear-gradient(to right, #833ab4, #fd1d1d, #fcb045)',
+                borderImageSlice: 1,
+                clipPath: 'inset(0 round 1rem)' // 16px radius for rounded-2xl
+              }}
+            />
+
+            <div className="relative z-20 flex items-center justify-between gap-4">
+              {/* Left: Icon/Logo */}
+              <div className="flex items-center gap-4 flex-1 min-w-0">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 p-[2px] shadow-md flex-shrink-0">
+                  <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
+                    <Instagram size={28} className="text-[#E1306C]" />
+                  </div>
+                </div>
+
+                {/* Center: Text */}
+                <div className="flex flex-col gap-0.5 min-w-0">
+                  <div className="flex items-center gap-1.5">
+                    <h3 className="text-[#3E2723] font-bold text-lg truncate">@verygood_chocolate</h3>
+                    <div className="bg-blue-500 rounded-full p-[2px]">
+                      <Check size={8} className="text-white" strokeWidth={4} />
+                    </div>
+                  </div>
+                  <p className="text-[#8D6E63] text-xs font-medium truncate">
+                    인스타그램 팔로우 하고 게릴라 이벤트 소식을 받아보세요 🍫
+                  </p>
+                </div>
+              </div>
+
+              {/* Right: Button */}
+              <button className="px-5 py-2 bg-[#3E2723] text-white text-sm font-bold rounded-full shadow-md group-hover:bg-[#5D4037] transition-colors whitespace-nowrap">
+                Follow
+              </button>
+            </div>
+          </motion.div>
         </section>
 
         {/* New & Best Section */}
