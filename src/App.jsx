@@ -236,6 +236,44 @@ export default function App() {
           </div>
         </section>
 
+        {/* Naver Place Save Event Section */}
+        <section className="w-full px-6 py-8 bg-[#FAF7F2]">
+          <div className="w-full bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center gap-4 border border-[#EAE0D5] relative overflow-hidden">
+            <div className="flex flex-col gap-1 w-full text-left">
+              <span className="text-sm text-[#8D6E63] font-medium animate-pulse">영수증 리뷰가 조금 귀찮으신가요? 🥺</span>
+              <h2 className="text-xl font-bold text-[#3E2723] break-keep leading-snug">
+                찜하기(❤️)만 눌러도<br />
+                <span className="text-[#FF6F61]">수제 그래놀라</span>를 드려요!
+              </h2>
+            </div>
+
+            <motion.button
+              onClick={() => window.open(
+                "https://m.place.naver.com/restaurant/1069379954/home",
+                "_blank"
+              )}
+              animate={{
+                rotate: [0, -2, 2, -2, 2, 0],
+              }}
+              transition={{
+                duration: 0.5,
+                repeat: Infinity,
+                repeatDelay: 1.5,
+                ease: "easeInOut"
+              }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-full py-4 bg-[#03C75A] text-white rounded-xl font-bold text-lg shadow-md hover:bg-[#02b351] transition-colors flex items-center justify-center gap-2 relative z-10"
+            >
+              1초 만에 찜하고 선물 받기
+            </motion.button>
+
+            <p className="text-xs text-[#A1887F] font-medium w-full text-left">
+              * 버튼 누르고 이동해서 '저장' 누른 화면을 보여주세요!
+            </p>
+          </div>
+        </section>
+
         {/* Game Section - Fortune Gacha */}
         <section className="w-full px-6 py-8 bg-[#FAF6F1]">
           <div className="w-full bg-[#FFF0F0] border border-[#EDC5C4] rounded-2xl p-6 flex flex-col gap-4 items-center shadow-sm min-h-[220px] justify-center relative overflow-hidden">
