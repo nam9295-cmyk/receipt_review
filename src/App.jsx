@@ -181,7 +181,7 @@ export default function App() {
           {/* Background Image */}
           <img
             src="/hero-bg.webp"
-            alt="Rose Gift"
+            alt="Granola Gift"
             className="absolute inset-0 w-full h-full object-cover"
           />
 
@@ -211,7 +211,7 @@ export default function App() {
                 className="text-lg text-[#FFFDF5] font-medium leading-relaxed drop-shadow-lg"
               >
                 영수증 인증하고,<br />
-                <span className="font-bold text-[#EDC5C4]">장미꽃 한송이</span> 받아가세요!
+                <span className="font-bold text-[#EDC5C4]">그래놀라</span> 받아가세요!
               </motion.p>
 
               <motion.button
@@ -230,7 +230,7 @@ export default function App() {
                 whileTap={{ scale: 0.98 }}
                 className="w-full py-4 bg-[#3E2723]/30 backdrop-blur-md border border-white/30 rounded-xl flex justify-center items-center shadow-[0_8px_32px_rgba(0,0,0,0.1)] transition-all duration-300 group"
               >
-                <span className="text-white text-base font-bold drop-shadow-md group-hover:text-[#FFFDF5]">영수증 리뷰 쓰고 장미꽃 받기</span>
+                <span className="text-white text-base font-bold drop-shadow-md group-hover:text-[#FFFDF5]">영수증 리뷰 쓰고 그래놀라 받기</span>
               </motion.button>
             </div>
           </div>
