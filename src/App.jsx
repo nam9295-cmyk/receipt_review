@@ -26,7 +26,7 @@ export default function App() {
               <img
                 className="w-full h-full object-cover"
                 alt="수제 아몬드 초코볼"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNUwI43QjhUZmvOY39kfg_UHl7ZNOO_KCWrodLdC6jOrsVKrkzWs3oIuquzudRD6Cr16GablTowhqloCPk0F2Bhz9ReWDq0f6xAKrqIl0cGSeQmltnJYcHtS1qE-ErixPzn6pzxeB6RlieQ2FLH6yEG3q6FP76TmbrVFbfEizjDMekn8oflt9mMt8CgzbSfOlRXyDUzrncPxo7ZGbC2ChHxb5savIFbDnSJA05p85Weo6Le_42bW4bIzSvt0wFIPQIsWm1FP0XW0o"
+                src="/almond_2ea.webp"
               />
             </div>
             <div>
@@ -129,7 +129,7 @@ export default function App() {
         <section className="bg-surface-container-highest/30 py-16 px-6 text-center border-t border-outline-variant/20">
           <h2 className="text-xl font-bold text-primary mb-2 font-headline">품질에 대한 우리의 약속</h2>
           <p className="text-on-surface-variant text-xs leading-relaxed mb-8 max-w-xs mx-auto font-body">
-            우리는 모든 한 입이 완벽할 수 있도록 오직 최고급 싱글 오리진 코코아 빈과 캘리포니아 아몬드만을 엄선합니다.
+            초콜릿이 필요할 땐 베리굿!
           </p>
           <div className="flex justify-center gap-4">
             <a className="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm hover:scale-110 transition-transform" href="#!">
