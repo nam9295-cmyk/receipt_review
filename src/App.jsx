@@ -5,18 +5,21 @@ const reviewLinks = [
     id: 'baemin',
     label: '배달의민족 리뷰 쓰기',
     eyebrow: 'BAEMIN',
+    logo: '배민',
     href: 'https://s.baemin.com/dS000CblIB0lg',
   },
   {
     id: 'coupang',
     label: '쿠팡이츠 리뷰 쓰기',
     eyebrow: 'COUPANG EATS',
+    logo: 'EATS',
     href: 'https://web.coupangeats.com/share?storeId=946445',
   },
   {
     id: 'naver',
     label: '네이버 플레이스 리뷰 쓰기',
     eyebrow: 'NAVER PLACE',
+    logo: 'N',
     href: 'https://m.place.naver.com/restaurant/1069379954/review/visitor',
   },
 ];
@@ -78,8 +81,13 @@ export default function App() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span>{link.eyebrow}</span>
-                <strong>{link.label}</strong>
+                <span className="platform-logo" aria-hidden="true">{link.logo}</span>
+                <span className="platform-text">
+                  <span className="platform-eyebrow">{link.eyebrow}</span>
+                  <strong>{link.label}</strong>
+                  <em>탭해서 이동하기</em>
+                </span>
+                <span className="platform-arrow" aria-hidden="true">↗</span>
               </a>
             ))}
           </div>
