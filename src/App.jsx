@@ -25,7 +25,7 @@ const steps = [
   ['01', '플랫폼 선택', '주문하신 채널을 골라 리뷰 화면으로 이동해 주세요.'],
   ['02', '리뷰 작성', '짧은 한 줄 리뷰도 괜찮아요. 사진이 있으면 더 좋아요.'],
   ['03', '완료 화면 제시', '작성 완료 화면을 매장 직원에게 보여주세요.'],
-  ['04', '선물 수령', '오늘 준비된 베리굿 초콜릿 맛보기 선물을 드립니다.'],
+  ['04', '선물 수령', '오늘 준비된 생크림 갸또 케이크 맛보기 선물을 드립니다.'],
 ];
 
 export default function App() {
@@ -48,17 +48,16 @@ export default function App() {
 
           <div className="hero-product-wrap" aria-hidden="true">
             <div className="circle-badge">GIFT<br />FOR<br />REVIEW</div>
-            <img className="hero-product hero-product-main" src="/chocolat.webp" alt="" />
-            <img className="hero-product hero-product-side" src="/almond_2ea.webp" alt="" />
+            <img className="hero-product hero-product-main" src="/cream-gateau-cake.webp" alt="" />
             <span className="mint-label mint-label-one">review</span>
             <span className="mint-label mint-label-two">gift</span>
           </div>
 
           <div className="hero-copy">
-            <h1 id="hero-title">리뷰 남겨주시면<br />작은 초콜릿 선물을 드려요.</h1>
+            <h1 id="hero-title">리뷰 남겨주시면<br />생크림 갸또를 맛보실 수 있어요.</h1>
             <p>
               주문하신 플랫폼에서 리뷰를 작성한 뒤, 완료 화면을 직원에게 보여주세요.
-              오늘 준비된 베리굿 초콜릿 맛보기 선물을 드립니다.
+              오늘 준비된 생크림 갸또 케이크 맛보기 선물을 드립니다.
             </p>
             <a className="primary-cta" href="#review-links">리뷰 작성하러 가기</a>
           </div>
