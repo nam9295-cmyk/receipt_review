@@ -1,16 +1,37 @@
-# React + Vite
+# Very Good Chocolate — Receipt QR 랜딩
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+배달 주문에 함께 동봉되는 미니 르뱅쿠키 안내와 외부 리뷰 링크를 제공하는 정적 React/Vite 페이지입니다.
 
-Currently, two official plugins are available:
+## 개발
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+npm install
+npm run dev
+npm run lint
+npm run build
+npm run preview -- --host 0.0.0.0
+```
 
-## React Compiler
+## 경로
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `/` 또는 `/levain`: 배달의민족·쿠팡이츠 선택 화면
+- `/b`: 배달의민족 CTA만 표시
+- `/c`: 쿠팡이츠 CTA만 표시
+- `/s`: 네이버 플레이스 CTA 표시
 
-## Expanding the ESLint configuration
+경로 분기는 React Router 없이 `src/receiptContent.js`의 `resolveChannel()`에서 처리합니다.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 운영 전 확인
+
+- `src/receiptContent.js`의 제품명·알레르기·보관 안내가 실제 제품 포장과 일치하는지 확인합니다.
+- 현재 히어로는 기존 `public/levein.webp`를 임시 사용합니다. 실제 증정 미니 쿠키 사진을 확보하면 `public/images/receipt/mini-levain-hero.webp`로 교체하고 `src/App.jsx`의 이미지 경로와 alt를 함께 확인합니다.
+- 배민·쿠팡이츠 링크가 실제 리뷰 진입 경로인지 iPhone·Android에서 확인합니다.
+- 현재 운영 주소와 canonical은 기존 오타 도메인 `https://reciept.verygood-chocolate.com/`을 유지합니다. 정식 `https://receipt.verygood-chocolate.com/`은 DNS·리디렉션 확인 전까지 QR과 canonical에 사용하지 않습니다.
+- 고객 주문번호·전화번호·리뷰 내용을 이 페이지에서 수집하지 않습니다.
+
+## 주요 파일
+
+- `src/App.jsx`: 페이지 구조와 섹션
+- `src/receiptContent.js`: 제품 안내, 외부 링크, pathname별 CTA
+- `src/index.css`: 영수증 에디토리얼 디자인과 반응형 레이아웃
+- `index.html`: 제목, 설명, canonical, `noindex,follow` 메타데이터
